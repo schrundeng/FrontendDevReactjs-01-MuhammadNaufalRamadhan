@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import {
-  Container,
-  Spinner,
-  Card,
-  Row,
-  Col,
-  Image,
-  ListGroup,
-} from "react-bootstrap";
+import { Spinner, Card, Image, ListGroup, Button } from "react-bootstrap";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
+
+const buttonColor = {
+    backgroundColor: "#002B56",
+    borderRadius: "0px",
+    color: "white",
+    fontSize: "1em",
+    width: "30%",
+  };
 
 const RestaurantDetail = () => {
   const { id } = useParams();
@@ -52,10 +53,25 @@ const RestaurantDetail = () => {
   return (
     <div className="container">
       <div className="row">
-        <h1>{restaurant.name}</h1>
+        <div className="col-12">
+        <br />
+        <h1>Restaurant</h1>
+        </div>
       </div>
       <div className="row">
         <div className="col-4">
+          <br />
+          <Link to={`/`}>
+            <Button style={buttonColor}>Back</Button>
+          </Link>
+
+          {""}
+        </div>
+      </div>
+      <div className="row">
+        <br />
+        <div className="col-4">
+          <br />
           <Image
             src={`https://restaurant-api.dicoding.dev/images/small/${restaurant.pictureId}`}
             alt={restaurant.name}
@@ -64,7 +80,9 @@ const RestaurantDetail = () => {
         <div className="col-8">
           <Card className="mb-4">
             <Card.Body>
-              <Card.Title>{restaurant.name}</Card.Title>
+              <Card.Title>
+                <h1>{restaurant.name}</h1>
+              </Card.Title>
               <Card.Text>{restaurant.description}</Card.Text>
               <Card.Text>
                 <strong>City:</strong> {restaurant.city}
