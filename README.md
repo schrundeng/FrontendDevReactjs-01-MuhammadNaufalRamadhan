@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### React Version 18.3.1
+
+### NPM Version 10.2.4
 
 In the project directory, you can run:
 
